@@ -23,7 +23,7 @@ image c catplove = "catplove"
 image c catpsad = "catpsad"
 image c catpangry = "catpangry"
 
-image c moth = "mothMan"
+image c moth = "mothp"
 image c mothLOVE = "mothMan"
 image c mothSAD = "mothMan"
 image c mothANGRY = "mothMan"

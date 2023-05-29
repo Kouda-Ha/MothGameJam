@@ -5,7 +5,7 @@ label start:
 #Starting with Caterpillar being vain and uppity
     #play music "audio/cafe.mp3"
     scene backg1
-    show c catp
+    show c moth
 #OPENING SCENE.
     #play sound "audio/Narrator1.mp3"
     c "I'm such a beautiful caterpillar."
@@ -78,6 +78,6 @@ label start:
 
     my "See you!"
 
-    
+
     # This ends the game.
     return
