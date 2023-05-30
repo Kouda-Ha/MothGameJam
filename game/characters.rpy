@@ -2,58 +2,45 @@
 # bad ending if too evil
 default evil = 0
 
-# Give the info and colour for each character
 # Main character caterpillar and moth
 define c = Character("Caterpillar Carl", color="#7fff00") #chartreuse green
 
-#Caterpilars
+#Caterpilar and Butterfly
 # Anthocharis cardamines - Orange-tip
-define my = Character("Mr Yellow", color="#FFCC33")#yellow
-# Peacock butterfly
-define r = Character("Riley", color="#FFE4E1")#MistRose
+define m = Character("Mr Yellow", color="#FFCC33")#yellow
 # Polyommatus bellargus - Adonis Blue
-define n = Character("Nompin", color="#33FFCC")#light blue
-
-#Butterflys
-define my2 = Character("Mr Yellow", color="#FFCC33")#yellow
-define r2 = Character("Riley", color="#FFE4E1")#MistRose"#800000")#maroon
-define n2 = Character("Nompin", color="#33FFCC")#light blue
+define r = Character("Riley", color="#33FFCC")#light blue
 
 #images for characters
 #Player
 image c catp = "catp"
-image c catplove = "catplove"
-image c catpsad = "catpsad"
-image c catpangry = "catpangry"
+image c catlove = "catlove"
+image c catsad = "catsad"
+image c catangry = "catangry"
 
-image c moth = "mothp"
-image c mothLOVE = "mothMan"
-image c mothSAD = "mothMan"
-image c mothANGRY = "mothMan"
-
+image c moth = "moth"
+image c mothlove = "mothlove"
+image c mothsad = "mothsad"
+image c mothangry = "mothangry"
 
 # caterpillar
-image my  neutral = "butterfly1"
-image my  sad = "characters/butterfly1"
-image my happy = "characters/butterfly1"
+image r  r = "riley"
+image r  sad = "rileysad"
+image r angry = "rileyangry"
+image r love = "rileylove"
 
-image r neutral = "characters/butterfly1"
-image r sad = "characters/butterfly1"
-image r happy = "characters/butterfly1"
-
-image n neutral = "characters/butterfly1"
-image n sad = "characters/butterfly1"
-image n happy = "characters/butterfly1"
+image m m = "mry"
+image m sad = "mrysad"
+image m angry = "mryangry"
+image m love = "mrylove"
 
 #butterfly
-image my2 neutral = "characters/butterfly1"
-image my2 sad = "characters/butterfly1"
-image my2 happy = "characters/butterfly1"
+image m bm = "mryb"
+image m bsad = "mrybsad"
+image m blove = "mryblove"
+image m bangry = "mrybangry"
 
-image r2 neutral = "characters/butterfly1"
-image r2 sad = "characters/butterfly1"
-image r2 happy = "characters/butterfly1"
-
-image n2 neutral = "characters/butterfly1"
-image n2 sad = "characters/butterfly1"
-image n2 happy = "characters/butterfly1"
+image r briley = "rileyb"
+image r bsad = "rileybsad"
+image r blove = "rileyblove"
+image r bangry = "rileybangry"
