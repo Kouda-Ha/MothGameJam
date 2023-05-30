@@ -7,8 +7,11 @@ default evil = 0
 define c = Character("Caterpillar Carl", color="#7fff00") #chartreuse green
 
 #Caterpilars
+# Anthocharis cardamines - Orange-tip
 define my = Character("Mr Yellow", color="#FFCC33")#yellow
+# Peacock butterfly
 define r = Character("Riley", color="#FFE4E1")#MistRose
+# Polyommatus bellargus - Adonis Blue
 define n = Character("Nompin", color="#33FFCC")#light blue
 
 #Butterflys
