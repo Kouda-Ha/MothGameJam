@@ -1,33 +1,97 @@
 ﻿# The script of the game goes in this file.
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-define e = Character("Eileen")
-
-
-# The game starts here.
-
+# The game/script starts here
 label start:
+#Starting with Caterpillar being vain and uppity
+    #play music "audio/cafe.mp3"
+    scene backg1
+    show c moth
+#OPENING SCENE.
+    #play sound "audio/Narrator1.mp3"
+    c "I'm such a beautiful caterpillar."
+    #play sound "audio/Narrator2.mp3"
+    show c catpangry
+    c "I'm going to flaunt it at the ugly caterpillars today, those guys disgust me."
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+#FIRST CONTACT
+    scene img02
+    #play sound "audio/Narrator21.mp3"
+    show c catplove
+    c "Heyyyyyyy everyone~! How's it feel being so boring?"
+    show c catp
+    my "*whispering* oh god it's them again..."
+    #play sound "audio/Narrator12.mp3"
+    my "Hello, Carl."
+    menu:
+        "CATERPILLAR Carl":
+            my "Ah yes, Caterpillar Carl, because that's a needed clarification"
+        "caterpillar talking":
+            c "response to it."
+        "...":
+            "you're too good to talk to these ugly caterpillars"
 
-    scene bg room
+    r "Hi Carl"
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+#Gone home
+    #INTRO
+    menu:
+        "placeholder":
+    #        play sound "audio/Narrator17.mp3"
+            c "placeholder"
+        "...":
 
-    show eileen happy
+    #        play sound "audio/Narrator18.mp3"
+            c "placeholder"
 
-    # These display lines of dialogue.
 
-    e "You've created a new Ren'Py game."
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    #Q2
+    c "placeholder"
+    menu:
+        "placeholder":
+            $ not_imposter = not_imposter +1 #Good Answer!
+            jump love_hware
+            label love_hware:
+                c "placeholder"
+                menu:
+                    "placeholder":
+                        $ not_imposter = not_imposter -1 #BAD Answer!
 
-    # This ends the game.
+                        c "placeholder"
+                    "placeholder":
+                        $ not_imposter = not_imposter +1 #Good Answer!
+                        c "placeholder"
+        "placeholder":
+            c "placeholder"
 
+    #Q3
+    my "placeholder placeholder"
+    menu:
+        "placeholderplaceholder":
+            my "placeholder"
+
+            "placeholder"
+        "placeholder":
+            my "placeholder"
+
+            "placeholder"
+
+    my "See you!"
+
+#Checking for if good or bad end
+    label which_end:
+        if evil >= 5:
+            jump good_end
+        elif evil < 5:
+            jump bad_end
+# ENDINGS
+label good_end:
+    "good ending"
+    return
+
+label bad_end:
+    "bad end"
+    return
+
+    # This is the end of the game.
     return
