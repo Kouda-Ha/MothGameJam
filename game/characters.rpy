@@ -1,6 +1,6 @@
 # Script for all characters.
 # bad ending if too evil
-default Evil = 0
+default evil = 0
 
 # Give the info and colour for each character
 # Main character caterpillar and moth

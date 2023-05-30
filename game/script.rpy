@@ -78,6 +78,20 @@ label start:
 
     my "See you!"
 
+#Checking for if good or bad end
+    label which_end:
+        if evil >= 5:
+            jump good_end
+        elif evil < 5:
+            jump bad_end
+# ENDINGS
+label good_end:
+    "good ending"
+    return
 
-    # This ends the game.
+label bad_end:
+    "bad end"
+    return
+
+    # This is the end of the game.
     return
