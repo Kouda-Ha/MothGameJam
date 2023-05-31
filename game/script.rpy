@@ -70,7 +70,8 @@ label start:
             r "There's nothing wrong with being short!"
             show c catp at right
             c "We're all the same height love, you're just stubby."
-            "You laugh at your own joke"
+            "You laugh at your own joke and Riley leaves in a hurry. You might have
+            upset them"
         "Do you even have feet?":
             scene img03
             show c catp at right
@@ -81,29 +82,31 @@ label start:
             show c catlove at right
             c "And the same size of one too, HA! I slay me!"
             "*Giggling uncontrollably*"
+            "Riley leaves in a hurry, I think you upset them"
 
     scene img03
-    show c catangry at right
+    show c catp at right
 
+    "It isn't even worth it to chase Riley and make more short jokes, they'll probably
+    end up a moth anyway. You should go get some rest."
+    show img04
     "The day has been long and it's getting dark."
-    "It isn't even worth it to make short jokes, Riley is probably
-    going to be moth anyway. You should go get some rest."
-
 #Gone home
     #Going home
-    scene img04
+    scene bggg
     "Walking home takes a while"
     "probably because you're a caterpillar and the world is rather large in comparison"
+    scene img05
     show c catp
     c "I love life, soon we'll become cocoons and I'll emerge a godly creature"
     "You laugh at the thought of the boring green caterpilars becoming disgusting moths"
-    c "Riley will look so dumb! Like a perpetually baby moth!"
+    c "Riley will look so dumb! They'll be a miniature moth!"
     show c catlove
     "In a moment of weakness, you think seeing Riley as a tiny moth could be cute though"
     "*You shake your head*"
+    scene img02
     show c catangry
-    c "Heh... hideous..."
-    scene img05
+    c "Heh... yeah... Riley will be hideous..."
     show c catp
     "As the sun begins to set, you ready for bed."
     c "I'll get some sleep..."
@@ -112,10 +115,10 @@ label start:
 # Arguing with Mr Yellow
     scene img02
     show c catp at right
-    "In the morning you go find a delicious plant"
+    "In the morning you go out to find a delicious plant"
     scene img05
     show c catlove at right
-    "and consume the entire thing in one sitting"
+    "And when you do, you consume the entire thing in one sitting"
     show m angry at left
     m "I can't believe you ate all the leaves on this plant! What were you thinking?"
     show c catangry at right
@@ -124,31 +127,35 @@ label start:
     m "We're supposed to share the resources in our environment! You can't just go around devouring
     everything without considering others."
     show c catp at right
-    c "Oh, please! Survival of the fittest, my friend. If I didn't eat them, someone else would have.
+    c "Oh, please! Survival of the fittest, my friend. If I didn't eat it, someone else would have.
     It's a tough world out here, and we have to look out for ourselves."
-    m "But that doesn't mean we should be selfish! There's plenty of foliage around if we all take only
-    what we need. It's about balance and coexistence."
-    c "Balance, schmalance! I'm just doing what comes naturally. If you're so concerned about sharing,
+    show m sad at left
+    m "But that doesn't mean we should be selfish! There's plenty of foliage around! If we all take only
+    what we need, we'd all be fed. It's about balance! And coexistence!"
+    show c catangry at right
+    c "Balance, schmalance! I'm just doing what comes naturally! If you're so concerned about sharing,
     why don't you find your own plant and stop bothering me?"
     show m angry at left
-    m " I will find my own plant, thank you very much! And I hope you learn a lesson about consideration
+    m "I will find my own plant, thank you very much! And I hope you learn a lesson about consideration
     and empathy. We're all in this together, you know."
-    show c catangry at right
+    show c catp at right
     c "Oh, please spare me the moral lecture. I'm not interested in your idealistic notions. I'll continue
-    doing what I need to survive, whether you like it or not."
+    doing what I need to survive, whether you like it or not, moth breath!"
     show m sad at left
     m "Fine! I'll leave you to your selfish ways. But mark my words, someday you'll realize the importance
     of cooperation and sharing. Goodbye!"
     c "Good riddance! I'll be just fine without your preaching. See you never!"
     scene img05
-    show c catlove at right
+    show c catangry at right
     "Mr Yellow leaves"
     c "The nerve of some bugs!"
     scene img02
     "You go find another plant and eat some more leaves before once again going to sleep"
-
+    show c catlove at right
 # Day 03
 #
+    scene img02
+    "The weather looks good today, you make your way to the lake"
     scene img03
     show r r
     "On the way to the lake for a drink you see Riley heading over to steal your water"
@@ -182,7 +189,11 @@ label start:
     "Riley and you take turns drinking from the lake, whiles eyeing each other warily,
     and reluctantly finding a temporary compromise."
 
-
+    "Once again, it is time for bed."
+    scene img05
+    "So you make your way home"
+    scene img02
+    "And get some well deserved rest!"
 # Caterpillar Morph time
     scene img02
     "You wake up feeling chipper... you're ready."
@@ -194,12 +205,11 @@ label start:
         "Become a cocoon":
             scene img02
             show c catlove
-            c "I could tell the others, but I'm so tired I'll just start immediately."
-
+            c "I could tell the others, but I'm so tired I'll just start it immediately."
 
         "Flaunt at the others that you're becoming a cocoon":
             scene bg8
-            "You go find the others, to flaunt your soon to be cocoon-ness and butterfly"
+            "You go find the others, to flaunt your soon to be cocoon-ness and soon to become butterfly-ness!"
             show c catp at right
             c "Hey everyone! I'm ready to make my cocoon! I'm going to look AMAZING!"
             show r r at left
@@ -210,14 +220,41 @@ label start:
             show r love at left
             show c catp at right
             r "I'm so excited! I hope your metamorphosis goes well!"
+    scene bg8
+    "The time has come and you need to go back home"
 
     scene img02
+    show c catp
+    c "Well, here goes nothing!"
     show c catlove
-    c "You get ready to become a cocoon and get comfy and cosy in your home."
+    "A restlessness stirred within, and as this feeling intensified,
+    you were drawn to a secluded spot where you instinctively began building
+    a protective shelter, your cocoon."
+    scene img02
+    "Nestled within the cocoon, you embrace a profound stillness.
+    It became a time of reflection and surrender, as the forces of transformation
+    worked their magic. Cells rearranged, tissues dissolved, and new structures
+    took shape within the safety of the cocoon."
+    scene bg8
+    "Weeks passed, and as you patiently underwent metamorphosis,
+     trusting in the unseen process happening within your fragile enclosure.
+     It was a delicate dance between vulnerability and hope. A shedding of the old
+     to make room for the new."
+    scene backg1
+    "Finally, the time came for you to emerge from your cocoon."
+    "With determined effort, it pushed against the confines, discovering newfound
+    strength."
+    "And then, in a breathtaking moment, you were transformed!"
 
-
-
-
+    scene img02
+    "..."
+    show c moth
+    "..."
+    scene img02
+    show c mothlove
+    "..."
+    scene img02
+    show c mothsad
 
     #Q2
     c "placeholder"

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 8: end of line expected.
-    show c catp at top right
-                       ^
+File "game/script.rpy", line 230: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    scene img01
+    ^
 
 Ren'Py Version: Ren'Py 7.4.10.2178
-Tue May 30 18:11:31 2023
+Wed May 31 16:10:38 2023
