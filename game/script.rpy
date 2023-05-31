@@ -16,6 +16,7 @@ label start:
     show c catp at right
     c "those guys disgust me."
 
+# Day 01
 #FIRST CATTERPILLAR BULLYING
     scene backg1
     show c catlove at right
@@ -107,16 +108,114 @@ label start:
     "As the sun begins to set, you ready for bed."
     c "I'll get some sleep..."
 
+# Day 02
+# Arguing with Mr Yellow
+    scene img02
+    show c catp at right
+    "In the morning you go find a delicious plant"
+    scene img05
+    show c catlove at right
+    "and consume the entire thing in one sitting"
+    show m angry at left
+    m "I can't believe you ate all the leaves on this plant! What were you thinking?"
+    show c catangry at right
+    c "Well, I was hungry, and those leaves looked delicious. I didn't realize you had any claim on them."
+    show m m at left
+    m "We're supposed to share the resources in our environment! You can't just go around devouring
+    everything without considering others."
+    show c catp at right
+    c "Oh, please! Survival of the fittest, my friend. If I didn't eat them, someone else would have.
+    It's a tough world out here, and we have to look out for ourselves."
+    m "But that doesn't mean we should be selfish! There's plenty of foliage around if we all take only
+    what we need. It's about balance and coexistence."
+    c "Balance, schmalance! I'm just doing what comes naturally. If you're so concerned about sharing,
+    why don't you find your own plant and stop bothering me?"
+    show m angry at left
+    m " I will find my own plant, thank you very much! And I hope you learn a lesson about consideration
+    and empathy. We're all in this together, you know."
+    show c catangry at right
+    c "Oh, please spare me the moral lecture. I'm not interested in your idealistic notions. I'll continue
+    doing what I need to survive, whether you like it or not."
+    show m sad at left
+    m "Fine! I'll leave you to your selfish ways. But mark my words, someday you'll realize the importance
+    of cooperation and sharing. Goodbye!"
+    c "Good riddance! I'll be just fine without your preaching. See you never!"
+    scene img05
+    show c catlove at right
+    "Mr Yellow leaves"
+    c "The nerve of some bugs!"
+    scene img02
+    "You go find another plant and eat some more leaves before once again going to sleep"
+
+# Day 03
+#
+    scene img03
+    show r r
+    "On the way to the lake for a drink you see Riley heading over to steal your water"
+    scene img03
+    show r sad at left
+    c "Hey! I was here first! Get away from that water!"
+    show c catp at right
+    r "B-but there's enough space for both of us. I'm thirsty too."
+    show c catangry at right
+    c "Well, find your own spot then! I found this watering hole first,
+    and I'm not about to share it with you stupid greenies!"
+    show r r at left
+    r "Who made you the owner of the lake? I have every right to drink from
+    it as well. Stop being so selfish!"
+    c "Selfish? Me? Look who's talking! You're the one barging in and
+    trying to take my water!"
+    show r angry at left
+    r "I don't see your name written anywhere around here. This lake belongs to
+    everyone, and I won't let you bully me away."
+    c "Bully? I'm just standing up for what's mine. I worked hard to walk to this
+    lake!"
+    show r sad at left
+    r "If you want to be stubborn about it, why don't we take
+    turns drinking from the lake, fair and square. That way, we both get some."
+    show c catsad
+    c "Hmph! Fine. But I'm keeping an eye on you. Don't think you can pull any tricks."
+    show c catp at right
+    r "Don't worry. I won't stoop to your level. Let's just get on with it and
+    quench our thirst."
+    scene img03
+    "Riley and you take turns drinking from the lake, whiles eyeing each other warily,
+    and reluctantly finding a temporary compromise."
+
+
 # Caterpillar Morph time
-
+    scene img02
+    "You wake up feeling chipper... you're ready."
+    show c catp
+    "Ready to become a cocoon!"
+    show c catlove
+    "Ready to become a butterfly!"
     menu:
-        "placeholder":
-    #        play sound "audio/Narrator17.mp3"
-            c "placeholder"
-        "...":
+        "Become a cocoon":
+            scene img02
+            show c catlove
+            c "I could tell the others, but I'm so tired I'll just start immediately."
 
-    #        play sound "audio/Narrator18.mp3"
-            c "placeholder"
+
+        "Flaunt at the others that you're becoming a cocoon":
+            scene bg8
+            "You go find the others, to flaunt your soon to be cocoon-ness and butterfly"
+            show c catp at right
+            c "Hey everyone! I'm ready to make my cocoon! I'm going to look AMAZING!"
+            show r r at left
+            r "Oh? We were going to become cocoons too"
+            show m love at center
+            m "Yeah! It's going to be awesome! I'ma go get ready!"
+            scene bg8
+            show r love at left
+            show c catp at right
+            r "I'm so excited! I hope your metamorphosis goes well!"
+
+    scene img02
+    show c catlove
+    c "You get ready to become a cocoon and get comfy and cosy in your home."
+
+
 
 
 
@@ -125,8 +224,8 @@ label start:
     menu:
         "placeholder":
             $ evil = evil +1 #Good Answer!
-            jump love_hware
-            label love_hware:
+            jump cocoon
+            label cocoon:
                 c "placeholder"
                 menu:
                     "placeholder":
@@ -152,6 +251,17 @@ label start:
             "placeholder"
 
     m "See you!"
+
+
+# Once become butterfly or moth excitedly go show off to the others
+
+
+# Realisation you're a moth
+
+# Depression
+
+
+
 
 #Checking for if good or bad end
     label which_end:
