@@ -4,6 +4,8 @@ default evil = 0
 
 # Main character caterpillar and moth
 define c = Character("Caterpillar Carl", color="#7fff00") #chartreuse green
+define cc = Character("Butterfly(?) Carl", color="#7fff00") #chartreuse green
+define ccc = Character("Moth Carl", color="#7fff00") #chartreuse green
 
 #Caterpilar and Butterfly
 # Anthocharis cardamines - Orange-tip
@@ -40,7 +42,12 @@ image m bsad = "mrybsad"
 image m blove = "mryblove"
 image m bangry = "mrybangry"
 
-image r briley = "rileyb"
+image r br = "rileyb"
 image r bsad = "rileybsad"
 image r blove = "rileyblove"
 image r bangry = "rileybangry"
+
+image r bbr = "rileybb"
+image r bbsad = "rileybbsad"
+image r bblove = "rileybblove"
+image r bbangry = "rileybbangry"

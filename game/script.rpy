@@ -1,8 +1,22 @@
-﻿# The script of the game goes in this file.
+﻿# This game was made by Kouda_Ha for the 'GAMES MADE QVIICK??? HD Remix' Game Jam
+# https://itch.io/jam/games-made-qviick-hd-remix
+# For the theme, the organiser said
+## Quote: "If you need a theme, well, it's June! Which is moth season! Make a moth game.
+## I don't know.  Maybe try this game jam theme generator."
+# With this in mind, I literally made a game about moths.
 
-# The game/script starts here
+# Credits:
+## Script and storyline: @Kouda_Ha
+## Art: @Kouda_Ha
+## Photo backgrounds taken by @Kouda_Ha in Wales
+## Sound & BGM: Zapsplat.com
+
+# The game starts here
 label start:
+#    play music "audio/song.mp3" volume 0.25 # For BGM
+#    play sound "audio/goodans.mp3" volume 2.0 # For sounds
 #Starting with Caterpillar being vain and being uppity
+    play music "audio/nature.mp3" volume 0.75 # For BGM
     scene img02
     show c catp at right
 #OPENING SCENE.
@@ -93,7 +107,7 @@ label start:
     "The day has been long and it's getting dark."
 #Gone home
     #Going home
-    scene bggg
+    scene img06
     "Walking home takes a while"
     "probably because you're a caterpillar and the world is rather large in comparison"
     scene img05
@@ -154,7 +168,6 @@ label start:
     show c catlove at right
 # Day 03
 #
-    scene img02
     "The weather looks good today, you make your way to the lake"
     scene img03
     show r r
@@ -201,13 +214,16 @@ label start:
     "Ready to become a cocoon!"
     show c catlove
     "Ready to become a butterfly!"
+    #choice time
     menu:
         "Become a cocoon":
+            play sound "audio/goodans.mp3" volume 1.0 # For sounds
             scene img02
             show c catlove
             c "I could tell the others, but I'm so tired I'll just start it immediately."
 
         "Flaunt at the others that you're becoming a cocoon":
+            play sound "audio/badans.mp3" volume 1.0 # For sounds
             scene bg8
             "You go find the others, to flaunt your soon to be cocoon-ness and soon to become butterfly-ness!"
             show c catp at right
@@ -246,65 +262,223 @@ label start:
     strength."
     "And then, in a breathtaking moment, you were transformed!"
 
+
+# Once become butterfly or moth excitedly go show off to the others
     scene img02
-    "..."
     show c moth
-    "..."
-    scene img02
-    show c mothlove
-    "..."
+    cc "AHHHH! I feel both refreshed and new but also my back is killing me sitting in that cocoon for so long!"
     scene img02
     show c mothsad
+    "You take a moment to do some stretches"
+    cc "Huh... feels kind of weird being out in the daytime. I must still be recovering."
+    "You shake it off"
+    scene img02
+    show c mothlove
+    cc "I can't believe I'm a butterfly! I'M FINALLY A BUTTERFLY!"
+    show c moth
+    cc "Ohhhh my catterpillar godddddddddddd I need to show myself off! I need to see what happened to Riley and Mr Yellow too!"
+    scene img07
+    show c mothlove
+    cc "Hah! They probably ended up being stupid moths! I can't wait to see the look on their faces!"
+    "Flying at practically the speed of sound to show off your new physique to the other caterpillars, you spot
+    the most BEAUTIFUL being you could ever imagine in the distance"
+    scene img06
+    show m bm at left
+    show c mothlove at right
+    cc "Who? Who are you? I haven't seen you around here before?"
+    m "Carl?"
+    show c mothangry at right
 
-    #Q2
-    c "placeholder"
+    #Choice time
+    cc "THAT'S CATTERPILLAR CARL TO YOU... wait!?"
     menu:
-        "placeholder":
+        #OptionA
+        "Mr Yellow? You're a butterfly?":
+            play sound "audio/goodans.mp3" volume 1.0 # For sounds
             $ evil = evil +1 #Good Answer!
             jump cocoon
             label cocoon:
-                c "placeholder"
                 menu:
-                    "placeholder":
-                        $ evil = evil -1 #BAD Answer!
+                    #Option AA
+                    "YOU'RE SUPPOSED TO BE A DUMB MOTH!":
+                        $ evil = evil +1 #BAD Answer!
+                        show m bangry
+                        m "How can you say moths are dumb? Haven't you looked at your own reflection yet?"
+                        show c mothangry
+                        "You glare"
+                        ccc "What are you talking about?"
+                        show m bm
+                        m "You're an Emperor Moth."
+                        m "You look great too! Your wing span is amazing!"
+                        show c mothangry
+                        ccc "You need glasses!"
+                        m "I'm a butterfly, I can't wear glasses."
+                        ccc "Shut up! You need glasses! I'm an Emperor Butterfly! Why would anybody call a moth an emperor?!? Moths stink!"
+                        show c mothsad
+                        show m bsad
+                        m "Hey, it's ok to be a moth you know? Moths do a lot of..."
+                        ccc "Moths are stupid... I can't be a moth!"
+                        show c mothangry
+                        show m bm
+                        ccc "Stop talking! This can't be right!"
+                        "You fly away as fast as you can"
+                    #Option AB
+                    "You look... great!":
+                        play sound "audio/goodans.mp3" volume 1.0 # For sounds
+                        $ evil = evil -1 #Good Answer!
+                        "In stunned silence you realise Mr Yellow is an Orange Tip Butterfly"
+                        m "T-thanks Catterpillar Carl! Or I guess now it'd be Moth Carl, right?"
+                        cc "It'd be 'what Carl'?"
+                        show c mothsad
+                        "You must have misheard him"
+                        cc "Mr Yellow? Why did you say Moth... Carl?"
+                        show m bsad
+                        m "Haven't you looked at your reflection yet? You're an Emperor Moth."
+                        show m blove
+                        m "You look great too! Your wing span is amazing!"
+                        show c mothangry
+                        ccc "You need glasses!"
+                        show m bsad
+                        m "I'm a butterfly, I can't wear glasses."
+                        ccc "Shut up! You need glasses! I'm an Emperor Butterfly! Why would anybody call a moth an emperor?!?"
+                        show c mothsad
+                        show m bm
+                        ccc "Moths are stupid... I can't be a moth!"
+                        m "Hey, it's ok to be a moth you know? Moths do a lot of..."
+                        show c mothangry
+                        ccc "Stop talking! This can't be right!"
+                        "You fly away as fast as you can"
+        #Option B
+        "A butterfly?!? But you were a boring greenie!":
+            $ evil = evil +1 #BAD Answer!
+            "In stunned silence you realise Mr Yellow is an Orange Tip Butterfly"
+            show m blove
+            m "Yeah, it's me! I was just as surprised as you are! I feel fantastic!"
+            show c mothsad
+            cc "I was looking forward to seeing you as a moth"
+            show m bangry
+            m "I mean, just because you're a moth, doesn't mean we can't talk to each other."
+            show c moth
+            cc "Just because I'm a... what?"
+            show c mothsad
+            "You must have misheard him"
+            ccc "I'm a what, Mr Yellow?"
+            show m bsad
+            m "Haven't you looked at your reflection yet? You're an Emporer Moth."
+            show c mothangry
+            ccc "You need glasses!"
+            show m bm
+            m "I'm a butterfly, I can't wear glasses"
+            ccc "Shut up! You need glasses! I'm an Emporer Butterfly! Why would anybody call a moth emporer?!?"
+            show c mothsad
+            ccc "Moths are stupid... I can't be a moth!"
+            "You fly away as fast as you can"
 
-                        c "placeholder"
-                    "placeholder":
-                        $ evil = evil +1 #Good Answer!
-                        c "placeholder"
-        "placeholder":
-            c "placeholder"
+#Denile
+    scene img03
+    show c mothsad
+    "there's no way you're a dumb moth, right?"
+    scene img04
+    show c moth
+    ccc "There must be some sort of mistake! He's obviously lying!"
 
-    #Q3
-    m "placeholder placeholder"
+# Viewing yourself or refusing to confirm you're a moth
+    "There's water right there, all you need to do is look for yourself, Carl."
+    #Choice time
+    ccc "But..."
     menu:
-        "placeholderplaceholder":
-            m "placeholder"
+        "Shut up brain! I don't want to! Ignorance is bliss! I'M A BUTTERFLY!":
+            play sound "audio/badans.mp3" volume 1.0 # For sounds
+            $ evil = evil +1 #BAD Answer!
+            ccc "He was obviously lying! I don't need to look!"
 
-            "placeholder"
-        "placwholder":
-            m "placeholder"
+        "I'm just... scared to look":
+            play sound "audio/goodans.mp3" volume 1.0 # For sounds
+            $ evil = evil -1 #GOOD Answer!
+            ccc "If I look and I'm a moth, what can I do? I'm stuck like this for the rest of my life"
 
-            "placeholder"
+    "..."
 
-    m "See you!"
+    menu:
+        "*look*":
+            play sound "audio/goodans.mp3" volume 1.0 # For sounds
+            $ evil = evil -1 #GOOD Answer!
+            scene mothwater
+            ccc "It's true"
+            ccc "I'm a moth..."
+            ccc "What about Riley? Maybe Riley become a moth too?"
+
+        "*Don't look*":
+            play sound "audio/badans.mp3" volume 1.0 # For sounds
+            $ evil = evil +1 #BAD Answer!
+            ccc "I'm not looking, I don't NEED to look! It's obvious that Mr Yellow was just jealous because I'm an Emperor!"
+            ccc "I should find Riley! They probably ended up a moth! I can laugh at them!"
+
+# Find Riley
+    scene img09
+    show c moth
+    ccc "Where'd a dumb moth like Riley be hiding?"
+    "You ponder the locations known for Riley to hang out at"
+    menu:
+        "The lake! Riley's always at the lake":
+            play sound "audio/goodans.mp3" volume 1.0 # For sounds
+            $ evil = evil -1 #GOOD Answer!
+            scene img04
+            "You go look by the lake where you once shared a drink together"
+            show c moth at right
+            ccc "Hmm... looks like nobody is here right now..."
+            "suddenly a flutter is heard from behind you and a whoosh of air brushes past your face"
+            show r blove at left
+            r "Oh, hi Carl!"
 
 
-# Once become butterfly or moth excitedly go show off to the others
+        "Some rocks you never saw Riley at prior to metamorphosis but just in case Riley isn't a moth,
+         you'd like to stay in denile a little longer and avoid
+        the beautiful butterfly armarda that seems to be overtaking the hills":
+            jump rocks
+            label rocks:
+                play sound "audio/badans.mp3" volume 1.0 # For sounds
+                $ evil = evil +1 #BAD Answer!
+                ccc "Must be at those rocks!"
+                scene img10
+                ccc "Rocks they've never been to before!"
+                ccc "If I was a stupid moth Riley I'd probably go hide by those rocks!"
+                show c moth
+                ccc "Because it's a new experience and so is being a smelly moth!"
+                ccc "And it might be a nice and secluded place to hang out where nobody is going to find me..."
+                ccc "... I mean Riley"
+                "..."
+                "......"
+                "............"
+                show r br at left
+                r "Oh, hi Carl!"
+                show c mothangry at right
+                ccc "WHAT THE HELL!?! WHY ARE YOU HERE?!?"
+                show r blove at left
+                r "I thought I'd come check out these rocks, I'd never been here before and thought a new experience
+                would be nice. It is nice, isn't it? So secluded."
+                show c mothsad at right
+                ccc "Oh come on!!!"
+                "You flee"
+                scene img10
+                show r bbr at left
+                r "Was it something I said?"
+                show r bblove at left
+                r "Damn, these are some cool rocks!"
 
-
-# Realisation you're a moth
-
-# Depression
+    scene img02
+    show c mothsad
+    "You flee, but why even bother?"
+    ccc "This isn't fair..."
 
 
 
 
 #Checking for if good or bad end
     label which_end:
-        if evil >= 5:
+        if evil <= 3:
             jump good_end
-        elif evil < 5:
+        elif evil > 3:
             jump bad_end
 # ENDINGS
 label good_end:
