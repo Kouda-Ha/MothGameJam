@@ -1,6 +1,7 @@
 # Script for all characters.
 # bad ending if too evil
 default evil = 0
+default good = 0
 
 # Main character caterpillar and moth
 define c = Character("Caterpillar Carl", color="#7fff00") #chartreuse green

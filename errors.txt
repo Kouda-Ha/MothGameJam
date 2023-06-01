@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 230: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    scene img01
-    ^
+File "game/script.rpy", line 593: end of line expected.
+    c "Why are you being nice to me? I've always been horrible to you":
+                                                                      ^
 
 Ren'Py Version: Ren'Py 7.4.10.2178
-Wed May 31 16:10:38 2023
+Thu Jun  1 21:05:01 2023

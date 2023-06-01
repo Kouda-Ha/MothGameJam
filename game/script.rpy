@@ -17,6 +17,11 @@ label start:
 #    play sound "audio/goodans.mp3" volume 2.0 # For sounds
 #Starting with Caterpillar being vain and being uppity
     play music "audio/nature.mp3" volume 0.75 # For BGM
+    scene img09
+    "There's two ways for this story to go, and it all depends on your choices."
+    "If you chose an evil answer, you may hear an angry buzz, telling you your karma has gone down."
+    "If you hear a delightful *ping~!* then you have answered with kind, and your karma will increase"
+    "It's time to wake up, welcome to Moth Game."
     scene img02
     show c catp at right
 #OPENING SCENE.
@@ -68,6 +73,7 @@ label start:
     "You leave for the lake, to wash the taste of talking with Mr Yellow out of your mouth."
 
     scene img03
+    play music "audio/waterwater.mp3" volume 0.75 # For BGM
     "As you are travelling to the lake, you spot Riley. Stumpy, STUMPY Riley."
     scene img03
     show r r at left
@@ -104,9 +110,11 @@ label start:
     "It isn't even worth it to chase Riley and make more short jokes, they'll probably
     end up a moth anyway. You should go get some rest."
     show img04
+
     "The day has been long and it's getting dark."
 #Gone home
     #Going home
+    play music "audio/nature.mp3" volume 0.75 # For BGM
     scene img06
     "Walking home takes a while"
     "probably because you're a caterpillar and the world is rather large in comparison"
@@ -170,6 +178,7 @@ label start:
 #
     "The weather looks good today, you make your way to the lake"
     scene img03
+    play music "audio/waterwater.mp3" volume 0.75 # For BGM
     show r r
     "On the way to the lake for a drink you see Riley heading over to steal your water"
     scene img03
@@ -199,11 +208,13 @@ label start:
     r "Don't worry. I won't stoop to your level. Let's just get on with it and
     quench our thirst."
     scene img03
+    play music "audio/water.mp3" volume 0.2 # For BGM
     "Riley and you take turns drinking from the lake, whiles eyeing each other warily,
     and reluctantly finding a temporary compromise."
 
     "Once again, it is time for bed."
     scene img05
+    play music "audio/nature.mp3" volume 0.75 # For BGM
     "So you make your way home"
     scene img02
     "And get some well deserved rest!"
@@ -216,14 +227,16 @@ label start:
     "Ready to become a butterfly!"
     #choice time
     menu:
-        "Become a cocoon":
+        "No need to disturb everyone, just become a cocoon":
             play sound "audio/goodans.mp3" volume 1.0 # For sounds
+            $ good = good + 1 #Good Answer!
             scene img02
             show c catlove
             c "I could tell the others, but I'm so tired I'll just start it immediately."
 
         "Flaunt at the others that you're becoming a cocoon":
             play sound "audio/badans.mp3" volume 1.0 # For sounds
+            $ evil = evil +1 #BAD Answer!
             scene bg8
             "You go find the others, to flaunt your soon to be cocoon-ness and soon to become butterfly-ness!"
             show c catp at right
@@ -236,30 +249,38 @@ label start:
             show r love at left
             show c catp at right
             r "I'm so excited! I hope your metamorphosis goes well!"
-    scene bg8
-    "The time has come and you need to go back home"
+            scene bg8
+            show c catlove at right
+            c "why would they wish it went well for me? They should worry about themselves!"
+            show c catp at right
+            "The time has come and you need to go back home"
 
     scene img02
     show c catp
     c "Well, here goes nothing!"
     show c catlove
+    play sound "audio/insidemetamo.mp3" volume 1.0 # For sounds
     "A restlessness stirred within, and as this feeling intensified,
     you were drawn to a secluded spot where you instinctively began building
     a protective shelter, your cocoon."
     scene img02
+    play sound "audio/inmetamo.mp3" volume 1.0 # For sounds
     "Nestled within the cocoon, you embrace a profound stillness.
     It became a time of reflection and surrender, as the forces of transformation
     worked their magic. Cells rearranged, tissues dissolved, and new structures
     took shape within the safety of the cocoon."
     scene bg8
+    play sound "audio/insidemetamo.mp3" volume 1.0 # For sounds
     "Weeks passed, and as you patiently underwent metamorphosis,
      trusting in the unseen process happening within your fragile enclosure.
      It was a delicate dance between vulnerability and hope. A shedding of the old
      to make room for the new."
+    play sound "audio/inmetamo.mp3" volume 1.0 # For sounds
     scene backg1
     "Finally, the time came for you to emerge from your cocoon."
     "With determined effort, it pushed against the confines, discovering newfound
     strength."
+    play sound "audio/endmetamo.mp3" volume 1.0 # For sounds
     "And then, in a breathtaking moment, you were transformed!"
 
 
@@ -295,12 +316,13 @@ label start:
         #OptionA
         "Mr Yellow? You're a butterfly?":
             play sound "audio/goodans.mp3" volume 1.0 # For sounds
-            $ evil = evil +1 #Good Answer!
+            $ good = good + 1 #Good Answer!
+            m "Yeah! An Orange Tip Butterfly! Came to a bit of a shock to myself as well!"
             jump cocoon
             label cocoon:
                 menu:
                     #Option AA
-                    "YOU'RE SUPPOSED TO BE A DUMB MOTH!":
+                    "BUT YOU'RE SUPPOSED TO BE A DUMB MOTH!":
                         $ evil = evil +1 #BAD Answer!
                         show m bangry
                         m "How can you say moths are dumb? Haven't you looked at your own reflection yet?"
@@ -325,7 +347,7 @@ label start:
                     #Option AB
                     "You look... great!":
                         play sound "audio/goodans.mp3" volume 1.0 # For sounds
-                        $ evil = evil -1 #Good Answer!
+                        $ good = good + 1 #Good Answer!
                         "In stunned silence you realise Mr Yellow is an Orange Tip Butterfly"
                         m "T-thanks Catterpillar Carl! Or I guess now it'd be Moth Carl, right?"
                         cc "It'd be 'what Carl'?"
@@ -349,7 +371,7 @@ label start:
                         ccc "Stop talking! This can't be right!"
                         "You fly away as fast as you can"
         #Option B
-        "A butterfly?!? But you were a boring greenie!":
+        "Mr Yellow?! A butterfly?!? But you were a boring greenie!":
             $ evil = evil +1 #BAD Answer!
             "In stunned silence you realise Mr Yellow is an Orange Tip Butterfly"
             show m blove
@@ -375,9 +397,10 @@ label start:
             "You fly away as fast as you can"
 
 #Denile
+    play music "audio/waterwater.mp3" volume 0.5 # For BGM
     scene img03
     show c mothsad
-    "there's no way you're a dumb moth, right?"
+    "There's no way you're a dumb moth, right?"
     scene img04
     show c moth
     ccc "There must be some sort of mistake! He's obviously lying!"
@@ -394,17 +417,19 @@ label start:
 
         "I'm just... scared to look":
             play sound "audio/goodans.mp3" volume 1.0 # For sounds
-            $ evil = evil -1 #GOOD Answer!
+            $ good = good +1 #GOOD Answer!
             ccc "If I look and I'm a moth, what can I do? I'm stuck like this for the rest of my life"
 
     "..."
 
     menu:
         "*look*":
+            play music "audio/water.mp3" volume 0.2 # For BGM
             play sound "audio/goodans.mp3" volume 1.0 # For sounds
-            $ evil = evil -1 #GOOD Answer!
+            $ good = good +1 #GOOD Answer!
             scene mothwater
             ccc "It's true"
+            play sound "audio/horror.mp3" volume 1.0 # For sounds
             ccc "I'm a moth..."
             ccc "What about Riley? Maybe Riley become a moth too?"
 
@@ -414,15 +439,17 @@ label start:
             ccc "I'm not looking, I don't NEED to look! It's obvious that Mr Yellow was just jealous because I'm an Emperor!"
             ccc "I should find Riley! They probably ended up a moth! I can laugh at them!"
 
+    play music "audio/nature.mp3" volume 0.75 # For BGM
 # Find Riley
     scene img09
     show c moth
-    ccc "Where'd a dumb moth like Riley be hiding?"
+    ccc "Where'd Riley be hiding if they were a dumb moth?"
     "You ponder the locations known for Riley to hang out at"
     menu:
         "The lake! Riley's always at the lake":
+            play music "audio/waterwater.mp3" volume 0.5 # For BGM
             play sound "audio/goodans.mp3" volume 1.0 # For sounds
-            $ evil = evil -1 #GOOD Answer!
+            $ good = good + 1 #GOOD Answer!
             scene img04
             "You go look by the lake where you once shared a drink together"
             show c moth at right
@@ -430,6 +457,48 @@ label start:
             "suddenly a flutter is heard from behind you and a whoosh of air brushes past your face"
             show r blove at left
             r "Oh, hi Carl!"
+            show c mothangry at right
+            ccc "AHH!"
+            show r bbangry at left
+            r "AHHH! WHAT!?! Are you ok?!?"
+            show c mothsad at right
+            play sound "audio/horror.mp3" volume 1.0 # For sounds
+            ccc "Oh no... you're hot!"
+            show r bblove at left
+            r "I!?! That's very sudden! I don't know how to respond to that!"
+            show c moth at right
+            ccc "This is so unfair! Why is everyone so hot?!!"
+            show r bbr
+            r "Everyone? Ohhh, you must have seen Mr Yellow already"
+            show c mothsad
+            ccc "You mean Mr Orange-Tipped-Beautiful-Butterfly!"
+            ccc "It's so unfair! "
+            r "What do you mean?"
+
+            menu:
+                "I'm a disgusting moth! Bound to the darkness of the night!":
+                    $ evil = evil +1 #BAD Answer!
+                    play sound "audio/badans.mp3" volume 1.0 # For sounds
+                    show c mothsad at right
+                    ccc "I'm forever trapped in the shadows. While my butterfly
+                    counterparts bask in the glory of the sun's warm embrace,
+                    I'm confined to a nocturnal existence, devoid of your vibrant colours
+                    and joyful dances that adorn the daylight hours!"
+                    show r bbr
+                    r "This seems a little overly dramatic, you know moths are cool too."
+
+                "I didn't think my metamorphosis would go this way...":
+                    $ good = good + 1 #GOOD Answer!
+                    play sound "audio/goodans.mp3" volume 1.0 # For sounds
+                    show c moth at right
+                    ccc "Everyone is so cool looking and I'm just exhausted and my wings are dull"
+                    show r bblove at left
+                    r "Moths are cool too though, your feelers are really fluffy"
+                    r "And no wonder you're exhausted! You're a moth, nocturnal"
+                    show r bbr at left
+                    r "If you get some rest, you might feel better. It'll be ok."
+                    show c mothlove at right
+                    ccc "You know what, you might be right."
 
 
         "Some rocks you never saw Riley at prior to metamorphosis but just in case Riley isn't a moth,
@@ -468,17 +537,79 @@ label start:
 
     scene img02
     show c mothsad
-    "You flee, but why even bother?"
-    ccc "This isn't fair..."
+    "You return home, but wonder why you even bother."
+    ccc "I should get some sleep..."
+
+    # The night time
+    scene img02night
+    "..."
+    "You're surprised... You slept through the rest of the day with ease"
+# Riley comes check on Moth Carl, and discuss the benefits of moths and butterflies
+# Economically both pollinate different flowers which helps the environment
+    "and you actually feel a lot more refreshed"
+    show c mothlove
+    ccc "Huh... how about that..."
+    "There is a little russle in the flowers next to your rock"
+    show c mothangry at right
+    ccc "Who's there?!"
+    "Riley pops out from the shadows"
+    show r bbr at left
+    r "*yawning* Hi Carl!"
+    show c moth at right
+    ccc "What are you doing here?"
+    show r bbsad at left
+    r "Well you seemed really down earlier, so I wanted to make sure you were ok."
+
+    menu:
+        "Why would I be ok? I'm gross.":
+            play sound "audio/badans.mp3" volume 1.0 # For sounds
+            $ evil = evil +1 #BAD Answer!
+            show r bbsad
+            r "You are not gross! There's nothing wrong with moths!"
+            show c mothsad
+            show r bbr at left
+            r "A moth is just as important as a butterfly. Just like the intricate
+            dance of a delicate ecosystem, both moths and butterflies have our parts to play."
+            show c mothsad at right
+            c "What do you mean?"
+            show r bbr at left
+            r "When it comes to plant diversity, we both have our unique preferences.
+            While butterflies tend to favor brightly colored flowers, moths are often
+            drawn to more subtly scented and pale-colored blooms."
+            show r bblove at left
+            r "This diversity of plant preferences allows for a wider range of pollination interactions."
+
+
+        "I'll be fine, I'm just adjusting.":
+            play sound "audio/goodans.mp3" volume 1.0 # For sounds
+            $ good = good + 1 #GOOD Answer!
+            show c moth at right
+            show r bbr at left
+            r "I understand that! We've all just gone through a huge change, but yours will take
+             even longer to get used to because you've ended up nocturnal"
+            show c mothsad at right
+
+            menu:
+                "Why are you being nice to me? I've always been horrible to you":
+                    show r bblove at left
+                    r "Because we're friends!"
+                    c ""
+
+                ""
+
+
+# Mr Yellow brings a treat to Moth Carl
+## Either accept and feel happy/guilt for being mean
+## Or reject and be spiteful and jealous, accusing him of coming over to glout
 
 
 
 
 #Checking for if good or bad end
     label which_end:
-        if evil <= 3:
+        if evil <= good:
             jump good_end
-        elif evil > 3:
+        elif evil > good:
             jump bad_end
 # ENDINGS
 label good_end:
