@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 593: end of line expected.
-    c "Why are you being nice to me? I've always been horrible to you":
-                                                                      ^
+File "game/script.rpy", line 612: expected 'image_name_component' not found.
+    show scene night3
+        ^
+
+File "game/script.rpy", line 616: expected 'image_name_component' not found.
+    show scene night4
+        ^
 
 Ren'Py Version: Ren'Py 7.4.10.2178
-Thu Jun  1 21:05:01 2023
+Fri Jun  2 12:35:46 2023

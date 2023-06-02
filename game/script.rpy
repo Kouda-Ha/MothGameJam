@@ -8,6 +8,7 @@
 # Credits:
 ## Script and storyline: @Kouda_Ha
 ## Art: @Kouda_Ha
+## Leaf snack PNG: https://www.pngall.com/leaves-png/download/1764
 ## Photo backgrounds taken by @Kouda_Ha in Wales
 ## Sound & BGM: Zapsplat.com
 
@@ -139,8 +140,11 @@ label start:
     show c catp at right
     "In the morning you go out to find a delicious plant"
     scene img05
-    show c catlove at right
+    show c catlove
+    show leaf at right
     "And when you do, you consume the entire thing in one sitting"
+    scene img05
+    show c catp at right
     show m angry at left
     m "I can't believe you ate all the leaves on this plant! What were you thinking?"
     show c catangry at right
@@ -171,11 +175,13 @@ label start:
     show c catangry at right
     "Mr Yellow leaves"
     c "The nerve of some bugs!"
-    scene img02
+    scene img02night
     "You go find another plant and eat some more leaves before once again going to sleep"
     show c catlove at right
 # Day 03
-#
+
+    scene img02
+    show c catp at right
     "The weather looks good today, you make your way to the lake"
     scene img03
     play music "audio/waterwater.mp3" volume 0.75 # For BGM
@@ -216,7 +222,7 @@ label start:
     scene img05
     play music "audio/nature.mp3" volume 0.75 # For BGM
     "So you make your way home"
-    scene img02
+    scene img02night
     "And get some well deserved rest!"
 # Caterpillar Morph time
     scene img02
@@ -323,6 +329,7 @@ label start:
                 menu:
                     #Option AA
                     "BUT YOU'RE SUPPOSED TO BE A DUMB MOTH!":
+                        play sound "audio/badans.mp3" volume 1.0 # For sounds
                         $ evil = evil +1 #BAD Answer!
                         show m bangry
                         m "How can you say moths are dumb? Haven't you looked at your own reflection yet?"
@@ -372,6 +379,7 @@ label start:
                         "You fly away as fast as you can"
         #Option B
         "Mr Yellow?! A butterfly?!? But you were a boring greenie!":
+            play sound "audio/badans.mp3" volume 1.0 # For sounds
             $ evil = evil +1 #BAD Answer!
             "In stunned silence you realise Mr Yellow is an Orange Tip Butterfly"
             show m blove
@@ -450,7 +458,7 @@ label start:
             play music "audio/waterwater.mp3" volume 0.5 # For BGM
             play sound "audio/goodans.mp3" volume 1.0 # For sounds
             $ good = good + 1 #GOOD Answer!
-            scene img04
+            scene img03
             "You go look by the lake where you once shared a drink together"
             show c moth at right
             ccc "Hmm... looks like nobody is here right now..."
@@ -550,6 +558,7 @@ label start:
     "and you actually feel a lot more refreshed"
     show c mothlove
     ccc "Huh... how about that..."
+    play sound "audio/inmetamo.mp3" volume 1.0 # For sounds
     "There is a little russle in the flowers next to your rock"
     show c mothangry at right
     ccc "Who's there?!"
@@ -583,6 +592,11 @@ label start:
             play sound "audio/horror.mp3" volume 1.5 # for sound
             ccc "You see? Gloting! I'm only interested in pale-coloured flowers and you get
             the flashy ones! Leave me alone!"
+            show r bsad at left
+            r "I was only trying to cheer you up *sniffle*"
+            "Riley flys away crying"
+            scene img02night
+            show c mothangry
             "The nerve of some bugs! Butterflies are even worse than moths!"
 
         "I'll be fine, I'm just adjusting.":
@@ -596,11 +610,45 @@ label start:
 
             menu:
                 "Why are you being nice to me? I've always been horrible to you":
+                    play sound "audio/goodans.mp3" volume 1.0 # For sounds
+                    $ good = good + 1 #GOOD Answer!
                     show r bblove at left
                     r "Because we're friends!"
-                    c ""
+                    show r bbr
+                    show c mothlove at right
+                    ccc "!!"
+                    show moth at right
+                    ccc "I guess we could be friends"
+                    show r bblove at left
+                    r "!!"
+                    r "YEAH!"
+                    scene night3
+                    show r bbr at left
+                    show c moth at right
+                    "You both fly about talking until Riley is too tired to stay awake"
+                    scene night4
+                    show r bbr at left
+                    show c moth at right
+                    ccc "If you're too tired, you should go to sleep. We can talk again at the start or end of any night!"
+                    show r bblove at left
+                    r "Thanks, Carl! I look forward to it!"
+                    "You fly Riley home"
 
-                ""
+                "I'm not nocturnal! YOU'RE NOCTURNAL!":
+                    play sound "audio/badans.mp3" volume 1.0 # For sounds
+                    $ evil = evil + 1 #BAD Answer!
+                    scene img02night
+                    show c mothangry at right
+                    show r bbangry at left
+                    r "I'm not?!... That isn't an insult! There's nothing wrong with being nocturnal!"
+                    r "If you're going to be like this I'm leaving!"
+                    scene img02night
+                    show c mothangry
+                    ccc "GOOD RIDDANCE!"
+                    "..."
+                    show c mothsad
+                    play sound "audio/horror.mp3"
+                    "*sniffle*"
 
 
     "It's the day time again, and you're very tired. Maybe you should get some rest"
@@ -608,18 +656,93 @@ label start:
     show c mothsad at right
     play sound "audio/horror.mp3" # plays sound
     ccc "I miss the sun... but it makes me so tired now"
+    "You sleep in a deep sleep and once again wake up at dusk"
+    scene img02night
 
 
 # Mr Yellow brings a treat to Moth Carl
 ## Either accept and feel happy/guilt for being mean
 ## Or reject and be spiteful and jealous, accusing him of coming over to glout
-    "You hear russtling in the bushes again"
+    play sound "audio/inmetamo.mp3" volume 1.0 # For sounds
+    "You hear rustling in the bushes again"
+    show c mothangry
     ccc "Who's there?!... R-Riley?"
+    show c mothlove at right
     show m blove at left
+    show c mothangry at right
     m "Hi mot... erm Caterp.. errmmm..."
     m "Hi Cool Carl!"
+    show c moth at right
+    menu:
+        "Why are you here? I was always mean to you.":
+            play sound "audio/goodans.mp3" volume 1.0 # For sounds
+            $ good = good + 1 #GOOD Answer!
+            show m bsad at left
+            m "I heard you were having a difficult time"
+            show c mothsad at right
+            play sound "audio/horror.mp3"
+            ccc "I might be..."
+            show m blove at left
+            m "So I got you a present!"
+            show leaf
+            "Mr Yellow drops a pile of your favourite leaves on the floor"
+            show c mothlove
+            ccc "Mother of GOD! I love these leaves!"
+            scene img02night
+            show c mothlove
+            ccc "That was FANTASTIC!"
+            scene img02night
+            show m blove at left
+            show c mothlove at right
+            m "I'm happy you liked it. I remember you eating them as a caterpillar so I thought it'd cheer you up"
+            show c mothsad at right
+            ccc "Why are you being nice to me when all I did was berate you?"
+            show m bsad at left
+            m "Everyone deserves a second chance and it's never too late to change for the better"
+            play sound "audio/horror.mp3" # sound
+            ccc "I'll try to be better from now on..."
+            "*sniffle*"
+            show m bm at left
+            m "I look forward to hanging out with you more often, friend!"
+            m "I am too tired to be awake now though, how about we all meet up at dawn?"
+            show c moth at right
+            ccc "Sure!"
+            show img02night
+            show c moth at right
+            "Mr Yellow flutters away to his home for some sleep"
+            "And you start your day as a rather full moth thanks to the leaves, but it'd be good to have a drink!"
+            scene night3
+            "You enjoy a nice drink and stretched your wings a bit before returning to your home again"
 
+        "You here to brag about being a stinkin' butterfly!? HUH!?! GET LOST!":
+            play sound "audio/badans.mp3" volume 1.0 # For sounds
+            $ evil = evil + 1 #BAD Answer!
+            show m bangry at left
+            m "I'm not a bully! Unlike you! I was genuinely trying to see if you were alright!"
+            show c mothangry at right
+            ccc "Liar! You've come to make fun of me!"
+            show m bsad at left
+            m "If I had come to berate you, then why did I bring you a gift?!"
+            show leaf
+            "Mr Yellow throws a pile of your favourite leaves on the floor"
+            scene img02night
+            show c mothsad at right
+            show m bsad at left
+            ccc "You got me my favourite leaves?"
+            m "Yeah! I'm actually nice if you get to know me instead of shouting at me all the time! But I guess
+            you don't care about anybody but yourself!"
+            scene img02night
+            "Mr Yellow flys away crying"
+            play sound "audio/horror.mp3" # sad sounds
+            show c mothsad
+            "*sniffle*"
+            ccc "Good riddance..."
+            "After sad eating the leaves, you're too full to move and decide to just hide in your home instead"
 
+    scene night4
+    "Now then, what will the future bring?"
+    scene img02
+    "~Some Time into the Future~"
 
 #Checking for if good or bad end
     label which_end:
@@ -631,7 +754,6 @@ label start:
 # ENDINGS
 label good_end:
     scene img05
-    "good ending"
     "From then on, you met up with Mr Yellow and Riley each dusk to hang out and talk."
     show r blove
     show m blove at left
