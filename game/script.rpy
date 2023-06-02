@@ -522,6 +522,7 @@ label start:
                 show r br at left
                 r "Oh, hi Carl!"
                 show c mothangry at right
+                play sound "audio/horror.mp3" # for sounds
                 ccc "WHAT THE HELL!?! WHY ARE YOU HERE?!?"
                 show r blove at left
                 r "I thought I'd come check out these rocks, I'd never been here before and thought a new experience
@@ -561,24 +562,28 @@ label start:
     r "Well you seemed really down earlier, so I wanted to make sure you were ok."
 
     menu:
-        "Why would I be ok? I'm gross.":
+        "Leave me alone! I'm gross. You're only here to show off":
             play sound "audio/badans.mp3" volume 1.0 # For sounds
             $ evil = evil +1 #BAD Answer!
             show r bbsad
-            r "You are not gross! There's nothing wrong with moths!"
+            r "No I'm not and you are not gross! There's nothing wrong with moths!"
             show c mothsad
             show r bbr at left
             r "A moth is just as important as a butterfly. Just like the intricate
             dance of a delicate ecosystem, both moths and butterflies have our parts to play."
             show c mothsad at right
-            c "What do you mean?"
+            ccc "What do you mean?"
             show r bbr at left
             r "When it comes to plant diversity, we both have our unique preferences.
             While butterflies tend to favor brightly colored flowers, moths are often
-            drawn to more subtly scented and pale-colored blooms."
+            drawn to more subtly scented and pale-coloured blooms."
             show r bblove at left
             r "This diversity of plant preferences allows for a wider range of pollination interactions."
-
+            show c mothangry at right
+            play sound "audio/horror.mp3" volume 1.5 # for sound
+            ccc "You see? Gloting! I'm only interested in pale-coloured flowers and you get
+            the flashy ones! Leave me alone!"
+            "The nerve of some bugs! Butterflies are even worse than moths!"
 
         "I'll be fine, I'm just adjusting.":
             play sound "audio/goodans.mp3" volume 1.0 # For sounds
@@ -598,10 +603,21 @@ label start:
                 ""
 
 
+    "It's the day time again, and you're very tired. Maybe you should get some rest"
+    scene img02
+    show c mothsad at right
+    play sound "audio/horror.mp3" # plays sound
+    ccc "I miss the sun... but it makes me so tired now"
+
+
 # Mr Yellow brings a treat to Moth Carl
 ## Either accept and feel happy/guilt for being mean
 ## Or reject and be spiteful and jealous, accusing him of coming over to glout
-
+    "You hear russtling in the bushes again"
+    ccc "Who's there?!... R-Riley?"
+    show m blove at left
+    m "Hi mot... erm Caterp.. errmmm..."
+    m "Hi Cool Carl!"
 
 
 
@@ -611,13 +627,53 @@ label start:
             jump good_end
         elif evil > good:
             jump bad_end
+
 # ENDINGS
 label good_end:
+    scene img05
     "good ending"
+    "From then on, you met up with Mr Yellow and Riley each dusk to hang out and talk."
+    show r blove
+    show m blove at left
+    show c mothlove at right
+    "And life wasn't that bad afterall"
+    scene night1
+    show c moth at left
+    "You even met other moths"
+    scene night3
+    show c mothsad at right
+    "And when you'd feel lonely or sad"
+    scene night4
+    "All you needed to do was meet with Riley or Mr Yellow at dusk or dawn"
+    show c mothlove at right
+    show r bblove at left
+    "To be comforted and appreciated"
+    scene img05
+    show c mothlove at right
+    show m blove at left
+    "by your friends"
+    scene img02night
+    show c mothlove
+    "Good End"
     return
 
 label bad_end:
-    "bad end"
+    scene img02night
+    show c mothangry
+    "From then on, you lived in spite, never talking to the butterflies again"
+    scene night1
+    show c mothsad
+    "Never talking to fellow moths either! As they are disgusting creatures!"
+    scene night3
+    show c moth at left
+    "Shamefully you would leave to get food, then return to your home"
+    scene night4
+    show c mothangry
+    "Cursing the gods or lack thereof for making you into the one thing you truely hate..."
+    scene img02night
+    "A stinky moth with moth breath"
+    show c mothsad
+    "Bad End"
     return
 
     # This is the end of the game.

@@ -1,30 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 206, in script
-    show m m at centre
-  File "game/script.rpy", line 206, in <module>
-    show m m at centre
-NameError: name 'centre' is not defined
+  File "game/script.rpy", line 525, in script
+    play sounds "audio/horror.mp3" # for sounds
+  File "renpy/common/000statements.rpy", line 129, in execute_play_music
+    relative_volume=eval(p.get("volume", "1.0")))
+Exception: Audio channel u'sounds' is unknown.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 206, in script
-    show m m at centre
-  File "renpy/ast.py", line 1197, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "renpy/ast.py", line 1156, in show_imspec
-    at_list = [ renpy.python.py_eval(i) for i in at_list ]
-  File "renpy/python.py", line 2276, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "renpy/python.py", line 2269, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 206, in <module>
-    show m m at centre
-NameError: name 'centre' is not defined
+  File "game/script.rpy", line 525, in script
+    play sounds "audio/horror.mp3" # for sounds
+  File "renpy/ast.py", line 2015, in execute
+    self.call("execute")
+  File "renpy/ast.py", line 2003, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "renpy/statements.py", line 278, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 129, in execute_play_music
+    relative_volume=eval(p.get("volume", "1.0")))
+  File "renpy/audio/music.py", line 98, in play
+    c = get_channel(channel)
+  File "renpy/audio/audio.py", line 912, in get_channel
+    raise Exception("Audio channel %r is unknown." % name)
+Exception: Audio channel u'sounds' is unknown.
 
 Windows-10-10.0.19041
 Ren'Py 7.4.10.2178
 MothGame 1.0
-Wed May 31 14:28:34 2023
+Fri Jun  2 11:02:59 2023
