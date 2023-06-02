@@ -9,6 +9,8 @@
 ## Script and storyline: @Kouda_Ha
 ## Art: @Kouda_Ha
 ## Leaf snack PNG: https://www.pngall.com/leaves-png/download/1764
+## Hat: https://clipartcraft.com/images/cowboy-hat-transparent-orange-1.png
+## Gun: https://www.pngkey.com/download/u2e6u2w7a9r5y3q8_download-hand-holding-gun-png-clipart-firearm-pistol/
 ## Photo backgrounds taken by @Kouda_Ha in Wales
 ## Sound & BGM: Zapsplat.com
 
