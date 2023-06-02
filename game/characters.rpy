@@ -14,6 +14,8 @@ define m = Character("Mr Yellow", color="#FFCC33")#yellow
 # Polyommatus bellargus - Adonis Blue
 define r = Character("Riley", color="#33FFCC")#light blue
 
+define rick = Character("Moth Rick Grimes", color="#f5f5dc")#beige
+
 #images for characters
 #Player
 image c catp = "catp"
@@ -52,3 +54,6 @@ image r bbr = "rileybb"
 image r bbsad = "rileybbsad"
 image r bblove = "rileybblove"
 image r bbangry = "rileybbangry"
+
+# meme
+image rick rick = "rick"
