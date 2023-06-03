@@ -25,7 +25,7 @@ label start:
     "At some point you will start to hear pinging noises when you click on an answer."
     "If you're mean, you may hear an angry buzz, telling you your karma has gone down."
     "If you hear a delightful *ping~!* then you have answered with kind, and your karma will increase"
-    "It's time to wake up, welcome to Moth Game."
+    "It's time to wake up, welcome, Carl."
     scene img02
     show c catp at right
 #OPENING SCENE.
@@ -545,6 +545,8 @@ label start:
                 show r bblove at left
                 r "Damn, these are some cool rocks!"
 
+
+    play music "audio/nature.mp3" volume 0.75 # For BGM
     scene img02
     show c mothsad
     "You return home, but wonder why you even bother."

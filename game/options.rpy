@@ -171,7 +171,7 @@ define config.save_directory = "MothGame-1685357612"
 ##
 ## The icon displayed on the taskbar or dock.
 
-define config.window_icon = "gui/window_icon.png"
+define config.window_icon = "images/characters/rick.png"
 
 
 ## Build configuration #########################################################
