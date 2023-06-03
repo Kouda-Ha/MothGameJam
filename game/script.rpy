@@ -9,6 +9,8 @@
 ## Script and storyline: @Kouda_Ha
 ## Art: @Kouda_Ha
 ## Leaf snack PNG: https://www.pngall.com/leaves-png/download/1764
+## Hat: https://clipartcraft.com/images/cowboy-hat-transparent-orange-1.png
+## Gun: https://www.pngkey.com/download/u2e6u2w7a9r5y3q8_download-hand-holding-gun-png-clipart-firearm-pistol/
 ## Photo backgrounds taken by @Kouda_Ha in Wales
 ## Sound & BGM: Zapsplat.com
 
@@ -20,17 +22,18 @@ label start:
     play music "audio/nature.mp3" volume 0.75 # For BGM
     scene img09
     "There's two ways for this story to go, and it all depends on your choices."
-    "If you chose an evil answer, you may hear an angry buzz, telling you your karma has gone down."
+    "At some point you will start to hear pinging noises when you click on an answer."
+    "If you're mean, you may hear an angry buzz, telling you your karma has gone down."
     "If you hear a delightful *ping~!* then you have answered with kind, and your karma will increase"
-    "It's time to wake up, welcome to Moth Game."
+    "It's time to wake up, welcome, Carl."
     scene img02
     show c catp at right
 #OPENING SCENE.
     c "I'm such a beautiful caterpillar."
     show c catlove at right
     c "I'm going to be an even MORE beautiful butterfly!"
-    c "Some humans identified me as an Emporer caterpillar!"
-    c "An Emporer BUTTERFLY must look EXQUISITE!!!"
+    c "Some humans identified me as an Emperor caterpillar!"
+    c "An Emperor BUTTERFLY must look EXQUISITE!!!"
     show c catangry at right
     c "I'm going to flaunt it at the ugly caterpillars again today..."
     show c catp at right
@@ -61,16 +64,15 @@ label start:
             scene backg1
             show m sad at left
             m "Sorry, I'm just tired... Did you need something?"
-            c "No, I'm just looking at you and feeling happy I'm an Emporer! Compared to
+            c "No, I'm just looking at you and feeling happy I'm an Emperor! Compared to
              whatever you are."
             m "..."
         "...":
             "You realise you're too good to be talking to these ugly caterpillars,
             so you check yourself out in a near by puddle reflection instead"
     "*leaves blow by*"
-    "You're bored, and justly so! Mr Yellow is practically a grass snake"
-    "with an excessive amount of legs."
-    c "You all bore me. I'm going."
+    "You're bored, and justly so! Mr Yellow is practically a grass snake with an excessive amount of legs."
+    c "You bore me. I'm going."
     "You leave for the lake, to wash the taste of talking with Mr Yellow out of your mouth."
 
     scene img03
@@ -177,11 +179,10 @@ label start:
     c "The nerve of some bugs!"
     scene img02night
     "You go find another plant and eat some more leaves before once again going to sleep"
-    show c catlove at right
 # Day 03
 
     scene img02
-    show c catp at right
+    show c catlove at right
     "The weather looks good today, you make your way to the lake"
     scene img03
     play music "audio/waterwater.mp3" volume 0.75 # For BGM
@@ -213,7 +214,7 @@ label start:
     show c catp at right
     r "Don't worry. I won't stoop to your level. Let's just get on with it and
     quench our thirst."
-    scene img03
+    scene img3close
     play music "audio/water.mp3" volume 0.2 # For BGM
     "Riley and you take turns drinking from the lake, whiles eyeing each other warily,
     and reluctantly finding a temporary compromise."
@@ -544,6 +545,8 @@ label start:
                 show r bblove at left
                 r "Damn, these are some cool rocks!"
 
+
+    play music "audio/nature.mp3" volume 0.75 # For BGM
     scene img02
     show c mothsad
     "You return home, but wonder why you even bother."
@@ -762,6 +765,13 @@ label good_end:
     scene night1
     show c moth at left
     "You even met other moths"
+    scene night1
+    show c mothangry at right
+    show rick rick at left
+    rick "CARLLLLLL!!!!!!"
+    scene night1
+    show c moth at right
+    ccc "What was that?"
     scene night3
     show c mothsad at right
     "And when you'd feel lonely or sad"

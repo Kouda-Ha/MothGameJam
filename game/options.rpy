@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("MothGame")
+define config.name = _("Carl")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -29,15 +29,36 @@ define config.version = "1.0"
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""
-""")
+define gui.about = _p("""﻿This game was made by Kouda_Ha for the 'GAMES MADE QVIICK??? HD Remix' Game Jam
+
+Found at: https://itch.io/jam/games-made-qviick-hd-remix
+
+For the theme, the organiser said "If you need a theme, well, it's June! Which is moth season! Make a moth game. I don't know.  Maybe try this game jam theme generator."
+
+With this in mind, I literally made a game about moths.
+
+# Credits:
+
+Script and storyline: @Kouda_Ha
+
+Art: @Kouda_Ha
+
+Leaf snack PNG: https://www.pngall.com/leaves-png/download/1764
+
+Hat: https://clipartcraft.com/images/cowboy-hat-transparent-orange-1.png
+
+Gun: https://www.pngkey.com/download/u2e6u2w7a9r5y3q8_download-hand-holding-gun-png-clipart-firearm-pistol/
+
+Photo backgrounds taken by @Kouda_Ha in Wales
+
+Sound & BGM: Zapsplat.com""")
 
 
 ## A short name for the game used for executables and directories in the built
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "MothGame"
+define build.name = "Carl"
 
 
 ## Sounds and music ############################################################
@@ -150,7 +171,7 @@ define config.save_directory = "MothGame-1685357612"
 ##
 ## The icon displayed on the taskbar or dock.
 
-define config.window_icon = "gui/window_icon.png"
+define config.window_icon = "images/characters/rick.png"
 
 
 ## Build configuration #########################################################
